@@ -187,8 +187,10 @@ gaps outer 5
 
 bindsym $mod+b exec firefox
 bindsym $mod+c exec code
+bindsym Print exec maim ~/Pictures/Screenshots/$(date +"%Y.%m.%d-%H:%M:%S-%N.png")
+bindsym $mod+o exec kitty ranger
 
-exec feh --bg-scale /home/maciek/Pictures/Wallpapers/skeletonbabes.png
+exec feh --bg-scale /home/maciek/Pictures/Wallpapers/boat.jpg
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -199,13 +201,13 @@ exec xcompmgr
 
 exec i3-layouts
 
-new_window 1pixel
+new_window pixel 2
 
 smart_gaps on
 smart_borders on
 
 # class                         border          background      text            indicator       child_border
-client.focused                  #ffffff         #ffffff         #ffff33         #ffffff       #fc0547
+client.focused                  #ffffff         #ffffff         #ffff33         #ffffff       #a83238
 # client.focused_inactive         #333333         #000000         #ffff33         #ffffff       #000000
 # client.unfocused                #333333         #000000         #888888         #ffffff       #000000
 # client.urgent                   #2f343a         #900000         #ffffff         #ffffff       #900000

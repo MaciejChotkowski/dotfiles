@@ -18,11 +18,11 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #050505
+background = #1a2c93bf
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #04f27b
-foreground-alt = #555
+foreground = #ffffff
+foreground-alt = #ffffff
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -59,8 +59,8 @@ font-4 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-5 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = xwindow
-modules-right = memory cpu date
+modules-center = date
+modules-right = wlan mobilebroadband battery memory cpu
 
 tray-position = right
 tray-padding = 2
@@ -148,7 +148,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #fc0547
+label-focused-background = #6f79d1
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -224,12 +224,12 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = WIFI: %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -246,7 +246,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = enp0s25
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -254,7 +254,7 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
+format-disconnected = 
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -270,7 +270,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M
 
-format-prefix = 
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -334,26 +334,32 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 95
+
+label-charging-font = 3
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full = <ramp-capacity> <label-full>
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 =  
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -411,13 +417,21 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/mobilebroadband]
+type = custom/script
+
+exec = mmcli -m 0 | grep connected && echo  || echo 
+tail = true
+
+interval = 10
+
 [settings]
 screenchange-reload = true
-;compositing-background = xor
+;compositing-background = over
 ;compositing-background = screen
-;compositing-foreground = source
+compositing-foreground = over
 ;compositing-border = over
-;pseudo-transparency = false
+;pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
