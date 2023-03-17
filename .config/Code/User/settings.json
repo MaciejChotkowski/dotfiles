@@ -1,0 +1,38 @@
+{
+    "mssql.connections": [
+        {
+            "server": "localhost",
+            "database": "",
+            "authenticationType": "SqlLogin",
+            "user": "SA",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "profileName": "default"
+        }
+    ],
+    "workbench.colorTheme": "Monochrome Dark Amplified",
+    "workbench.colorCustomizations": {
+        // "editor.selectionBackground": "#00ffb7",
+        // "editor.selectionBackground": "#4ea78e",
+        "editor.selectionBackground": "#535353",
+        "editor.wordHighlightBackground": "#771835",
+        "editorBracketHighlight.foreground1": "#ff0044",
+        "editorBracketHighlight.foreground2": "#a7002d",
+        "editorBracketHighlight.foreground3": "#60001a",
+        "editorBracketHighlight.foreground4": "#24000a",
+        "editor.wordHighlightStrongBackground": "#4ea78e"
+    },    
+    "editor.fontFamily": "'BigBlue_Terminal_437TT Nerd Font PL', 'monospace', monospace",
+    "editor.fontWeight": "normal",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": false,
+    "editor.cursorStyle": "block",
+    "window.zoomLevel": 1.5,
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "all",
+    "terminal.external.linuxExec": "alacritty"
+}
