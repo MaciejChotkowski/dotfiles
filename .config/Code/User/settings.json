@@ -1,16 +1,4 @@
 {
-    "mssql.connections": [
-        {
-            "server": "localhost",
-            "database": "",
-            "authenticationType": "SqlLogin",
-            "user": "SA",
-            "password": "",
-            "emptyPasswordInput": false,
-            "savePassword": true,
-            "profileName": "default"
-        }
-    ],
     "workbench.colorTheme": "Monochrome Dark Amplified",
     "workbench.colorCustomizations": {
         // "editor.selectionBackground": "#00ffb7",
