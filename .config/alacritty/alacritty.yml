@@ -21,7 +21,7 @@ colors:
     red:     '0xff5458'
     green:   '0x62d196'
     yellow:  '0xffb378'
-    blue:    '0x65b2ff'
+    blue:    '0x2effa1'
     magenta: '0x906cff'
     cyan:    '0x63f2f1'
     white:   '0xa6b3cc'
@@ -30,7 +30,7 @@ window:
   opacity: 0.8
 
   dimensions:
-    columns: 120
+    columns: 90
     lines: 30
 
 font:

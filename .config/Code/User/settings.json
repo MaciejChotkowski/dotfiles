@@ -22,5 +22,8 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "editor.renderWhitespace": "all",
-    "terminal.external.linuxExec": "alacritty"
+    "terminal.external.linuxExec": "alacritty",
+    "[python]": {
+        "editor.formatOnType": true
+    }
 }
