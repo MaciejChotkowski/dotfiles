@@ -27,7 +27,7 @@ colors:
     white:   '0xa6b3cc'
 
 window:
-  opacity: 0.8
+  opacity: 0.3
 
   dimensions:
     columns: 90
