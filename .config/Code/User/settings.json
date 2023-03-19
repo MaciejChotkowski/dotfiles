@@ -25,5 +25,7 @@
     "terminal.external.linuxExec": "alacritty",
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on"
 }
